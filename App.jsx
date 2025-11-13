@@ -107,8 +107,8 @@ function App() {
         }
     };
 
-    // Resets score (replaces restScore)
-    const restScore = () => {
+    // Resets score (replaces resetScore)
+    const resetScore = () => {
         if (window.confirm("Are you sure you want to reset the score?")) {
             const initialScore = { wins: 0, losses: 0, ties: 0 };
             setScore(initialScore);
@@ -120,7 +120,7 @@ function App() {
     return (
         <main>
             <PlayerThrow
-                onSelcet={handlePlayerSelect}
+                onSelect={handlePlayerSelect}
                 playerChoice={playerChoice}
                 isAnimating={isAnimating}
             />
@@ -138,7 +138,7 @@ function App() {
 
             <ScoreBoard score={score} />
 
-            <ResetButton onResetScore={restScore} />
+            <ResetButton onResetScore={resetScore} />
         </main> 
     );
 }
